@@ -1,5 +1,5 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/lami4945/public_html/lingto-beauty
+    - export DEPLOYPATH=/home/lami4945/public_html/lington-beauty
     - /bin/cp -R * $DEPLOYPATH
