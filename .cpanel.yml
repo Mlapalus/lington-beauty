@@ -2,12 +2,4 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/lami4945/public_html/lingto-beauty
-    - /bin/cp -R bin $DEPLOYPATH
-    - /bin/cp -R config $DEPLOYPATH
-    - /bin/cp -R migrations $DEPLOYPATH
-    - /bin/cp -R public $DEPLOYPATH
-    - /bin/cp -R src $DEPLOYPATH
-    - /bin/cp -R templates $DEPLOYPATH
-    - /bin/cp composer.json $DEPLOYPATH
-    - /bin/cp composer.lock $DEPLOYPATH
-    - $DEPLOYPATH/composer init
+    - /bin/cp -R * $DEPLOYPATH
