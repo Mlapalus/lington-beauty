@@ -1,0 +1,82 @@
+version: "3.8"
+services:
+  db:
+      image: mysql
+      container_name: db_lington_beauty
+      restart: always
+      volumes:
+      - db-data:/var/lib/mysql
+      environment:
+        MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
+        DATABASE_URL: "mysql://root:@db_docker_lington_beauty:3306/db_dev?serverVersion=5.7"
+      networks:
+        - dev
+  phpmyadmin:
+      image: phpmyadmin
+      container_name: phpmyadmin_lington_beauty
+      restart: always
+      depends_on:
+        - db
+      ports:
+        - 8083:80
+      environment:
+        APP_ENV: dev
+        PMA_HOST: db
+      networks:
+        - dev
+  www:
+      build: docker/php
+      container_name: www_lington_beauty
+      ports:
+        - "8743:80"
+      volumes:
+        - ./docker/php/vhosts:/etc/apache2/sites-enabled
+        - ./:/var/www
+      restart: always
+      environment:
+        PHP_IDE_CONFIG: serverName=lington_beauty
+        APP_ENV: dev
+      networks:
+        - dev
+      depends_on:
+        - db
+  redis:
+    container_name: redis_lington_beauty
+    restart: always
+    image: redis:6-alpine
+  mercure:
+    container_name: mercure_lington_beauty
+    restart: always
+    image: dunglas/mercure:v0.10.4
+    environment:
+      CORS_ALLOWED_ORIGINS: '*'
+      JWT_KEY: mercure_subscriber
+      PUBLISHER_JWT_KEY: mercure_publisher
+      ALLOW_ANONYMOUS: 0
+    ports:
+    - 8043:80
+  mail:
+    container_name: mail_lington_beauty
+    image: mailhog/mailhog
+    ports:
+      - 1083:8025
+  redis-gui:
+    container_name: redis-gui_lington_beauty
+    image: rediscommander/redis-commander
+    environment:
+      - REDIS_HOSTS=local:redis:6379
+    ports:
+      - "8052:8081"
+  node:
+    container_name: node_lington_beauty
+    build: docker/node
+    command: yarn run dev
+    working_dir: /usr/src/app
+    volumes:
+      - .:/usr/src/app
+    ports:
+      - 3003:3000
+networks:
+    dev:
+volumes:
+    db-data:
