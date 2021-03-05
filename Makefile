@@ -63,8 +63,8 @@ e2e-tests:
 
 .PHONY: tests
 tests:
-    composer install --prefer-dist
-    bin/phpunit
+	composer install --prefer-deist
+	bin/phpunit
 
 analyze:
 	$(de) composer valid
