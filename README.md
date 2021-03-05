@@ -1,1 +1,2 @@
-# lington-beauty
+# Lington-Beauty
+## Salon de coiffure
