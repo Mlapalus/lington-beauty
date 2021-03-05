@@ -63,6 +63,7 @@ e2e-tests:
 
 .PHONY: tests
 tests:
+    composer install --prefer-dist
 	bin/phpunit ./tests
 
 analyze:
