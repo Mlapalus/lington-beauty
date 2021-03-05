@@ -63,7 +63,7 @@ e2e-tests:
 
 .PHONY: tests
 tests:
-	composer install --prefer-deist
+	composer install --prefer-dist
 	bin/phpunit
 
 analyze:
