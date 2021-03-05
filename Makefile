@@ -63,7 +63,7 @@ e2e-tests:
 
 .PHONY: tests
 tests:
-	$(de) ../bin/phpunit ../tests
+	bin/phpunit ./tests
 
 analyze:
 	$(de) composer valid
