@@ -16,7 +16,6 @@
     </head>
     <body class=" {{ bodyClass is defined ? bodyClass : '' }} ">
         {% include 'partials/navbar.html.twig' %}
-        {% include 'partials/header.html.twig' %}
         {% block body %}{% endblock %}
         {% include 'partials/footet.html.twig' %}
     </body>
