@@ -1,0 +1,65 @@
+<section class="contact-section section_padding" style="margin-top: 50px">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h2 class="contact-title">Laissez votre commentaire</h2>
+            </div>
+            <div class="col-lg-8">
+                <form class="form-contact contact_form"
+                      action="{{ path('home') }}"
+                      method="post" id="contactForm"
+                      novalidate="novalidate">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="form-group">
+                                <label for="message"></label>
+                                <textarea class="form-control w-100"
+                                      minlength="10"  name="message" id="message" cols="30" rows="9"
+                                      placeholder='Entrer votre message (au moins 10 caractères)'
+                                      required >
+
+                                </textarea>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="name"></label>
+                                <input class="form-control" minlength="3"  name="name" id="name" type="text"
+                                        placeholder='Entrer votre nom'
+                                        required
+                                >
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="load_btn">
+                            <button type="submit" name="formComments" class="btn_1">Submit</button>
+                        </div>
+                        <div>
+                            <h3>
+                                <?php if (isset($_SESSION['erreur_comments'])) {
+                                    echo $_SESSION['erreur_comments'];
+                                    unset($_SESSION['erreur_comments']);
+                                 }
+                                ?>
+                            </h3>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="contact-section section_padding" style="margin-top: 50px">
+    <div class="container">
+        <h2> Vos commentaires :  </h2>
+    </div>
+</section>
+
+<section class="contact-section section_padding" style="margin-top: 50px">
+    <div class="container d-flex justify-content-between my-4">
+        <a href="" class="btn btn-primary">&laquo; Page Précedente</a>
+        <a href="" class="btn btn-primary ml-auto">Page Suivante &raquo;</a>
+    </div>
+</section>

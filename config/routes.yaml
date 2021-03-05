@@ -1,7 +1,7 @@
 home:
     path: /
     controller: App\Controller\HomeController::index
-gallerie:
+galery:
     path: /galery
     controller: App\Controller\GaleryController::index
 contact:
