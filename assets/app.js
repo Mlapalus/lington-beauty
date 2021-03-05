@@ -7,6 +7,14 @@
 
 // any CSS you import will output into a single css file (app.scss in this case)
 import './styles/app.scss';
+
+import './js/classie';
+import './js/contact';
+import './js/custom';
+import './js/mail-script';
+import './js/popper.min';
+import './js/uisearch';
+
 // start the Stimulus application
 import './bootstrap';
 
