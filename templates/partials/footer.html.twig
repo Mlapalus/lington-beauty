@@ -1,0 +1,80 @@
+{% include 'partials/socials-connect.html.twig' %}
+{% set isAdmin = true %}
+<footer class="footer-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-3 col-lg-6 col-sm-6 mb-4 mb-xl-0 single-footer-widget">
+                <h4>Bibiche Coiffure</h4>
+                <p>Service de <strong>Coiffure AFRO</strong> à domicile à Chatenay-Malabry dans le 92.</p>
+                <p>
+                    <strong>Hair Design</strong>, Visagiste, <strong>Conseils</strong> et toutes techniques Afro :
+                    <strong>Africaines</strong> - Antillaises - <strong>Américaines</strong>
+                </p>
+            </div>
+            <div class="col-xl-3 col-lg-6 col-sm-6 mb-4 mb-xl-0 single-footer-widget">
+                <h4>20 ans d'experience</h4>
+                <p>
+                    Spécialités : <strong>Lissage</strong>, Cheveux Bouclés, Crépus, Métissés,
+                    <strong>Soins Capillaires</strong>, Extensions, <strong>Tissages</strong> , Tresses,
+                    <strong>Défrisage</strong> ...
+                </p>
+                <p>
+                    Extensions et Tresses sur cheveux européens
+                </p>
+                <p>
+                    <strong>Beauté</strong>, Cosmétiques et remise en forme
+                </p>
+            </div>
+            <div class="col-xl-3 col-lg-6 col-sm-6 mb-4 mb-xl-0 single-footer-widget">
+                <h4>Liens Importants</h4>
+                <ul>
+                    <li><a href="{{ path('contact') }}">Contact</a></li>
+                    <li><a href="{{ path('galery') }}">Gallerie</a></li>
+                    <li><a href="{{ path('shop') }}">Shopping</a></li>
+                    <li><a href="{{ path('legales') }}">Mentions Légales</a></li>
+                    {% if isAdmin %}
+                        <li><a href="{{ path('admin') }}">Administration</a></li>
+                    {% endif %}
+                </ul>
+            </div>
+            <div class="col-xl-3 col-lg-6 col-sm-6 mb-4 mb-xl-0 single-footer-widget">
+                <h4>Me Contacter</h4>
+                <ul>
+                    <li><address>
+                            Bibiche Coiffure<br>
+                            22 Rue de Verdun<br>
+                            92290 Chatenay-Malabry<br>
+                        </address></li>
+                    <li><p>Tel : (+33)695464238</p></li>
+                    <li><p>Email : bibichelington@gmail.com</p></li>
+                </ul>
+                <p>Possibilité de prendre rendez-vous. Ouvert tous les jours.</p>
+            </div>
+        </div>
+        <div class="copyright_text">
+            <div class="row align-items-center">
+                <div class="col-lg-10">
+                    <div class="copyright_part">
+                        <p class="footer-text m-0">Copyright © 2019 All rights reserved
+                            <span class="px-2">|</span> This template is Made with
+                            <a style="color: #c64922;" href="http://colorlib.com"><i class="ti-heart"></i></a>
+                            by <a style="color: #c64922;" href="http://colorlib.com">Colorlib</a>
+                            <span class="px-2">|</span> This page is made by MLapalus
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-2 text-center text-lg-right">
+                    <div class="footer-social">
+                        <a href="https://facebook.com/Bibichecoiffure"><i class="ti-facebook"></i></a>
+                        <a href="https://instagram.com/bibichecoiffure"><i class="ti-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <?php   ?>
+</footer>
+<script type="text/javascript">
+    tarteaucitron.user.googlemapsKey = 'API KEY';
+    (tarteaucitron.job = tarteaucitron.job || []).push('googlemaps');
+</script>

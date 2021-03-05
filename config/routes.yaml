@@ -1,3 +1,27 @@
-#index:
-#    path: /
-#    controller: App\Controller\DefaultController::index
+home:
+    path: /
+    controller: App\Controller\HomeController::index
+galery:
+    path: /galery
+    controller: App\Controller\GaleryController::index
+contact:
+  path: /contact
+  controller: App\Controller\ContactController::index
+shop:
+  path: /shop
+  controller: App\Controller\ShopController::index
+login:
+  path: /login
+  controller: App\Controller\LogInController::index
+logout:
+  path: /logout
+  controller: App\Controller\LogOutController::index
+admin:
+  path: /admin
+  controller: App\Controller\AdminController::index
+legales:
+  path: /legales
+  controller: App\Controller\LegalesController::index
+hair:
+  path: /hair
+  controller: App\Controller\HairController::index

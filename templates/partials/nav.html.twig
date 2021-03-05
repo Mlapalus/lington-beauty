@@ -1,0 +1,32 @@
+
+{% set styleConnected = "font-size: 14px ; padding-right: 0" %}
+{% set style = "padding-left: 7px; padding-right: 7px" %}
+{% set isConnect = true %}
+
+
+<ul class="navbar-nav">
+    <li class="nav-item">
+        <a class="nav-link" style="{{ style }}" href="{{ path('home') }}">Accueil</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" style="{{ style }}" href="{{ path('galery') }}">La Gallerie</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" style="{{ style }}" href="{{ path('shop') }}">La Boutique</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" style="{{ style }}" href="{{ path('contact') }}">Contact</a>
+    </li>
+    {% if  isConnect  %}
+        <li class="nav-item">
+            <a class="nav-link" href="" style="{{ styleConnected }}">"Bonjour "</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" style="{{ styleConnected }}" href="{{ path('logout') }}">LogOut</a>
+        </li>
+    {% else %}
+        <li class="nav-item">
+            <a class="nav-link" style="{{ style }}" href="{{ path('login') }}">LogIn</a>
+        </li>
+    {% endif %}
+</ul>

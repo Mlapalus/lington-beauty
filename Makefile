@@ -3,7 +3,7 @@ server := ""
 container := "www"
 
 dc := docker-compose
-de := docker-compose exec $(container)
+de := docker-compose exec www
 dr := $(dc) run --rm
 sy := $(de) php bin/console
 drtest := $(dc) -f docker-compose.test.yml run --rm
@@ -39,10 +39,8 @@ migrate: vendor/autoload.php ## Migre la base de données (docker-compose up doi
 	$(sy) doctrine:migrations:migrate -q
 
 .PHONY: test
-test: vendor/autoload.php node_modules/time ## Execute les tests
-	$(drtest) phptest bin/console doctrine:schema:validate --skip-sync
+test: vendor/autoload.php ## Execute les tests
 	$(drtest) phptest vendor/bin/phpunit
-	$(node) yarn run test
 
 build:
 	$(MAKE) prepare-test
@@ -65,8 +63,8 @@ e2e-tests:
 
 .PHONY: tests
 tests:
-	$(de) bin/phpunit --testsuite unit,integration,system,end_to_end
-
+	composer install --prefer-dist
+	bin/phpunit
 
 analyze:
 	$(de) composer valid
