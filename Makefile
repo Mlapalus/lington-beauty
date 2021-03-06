@@ -64,6 +64,8 @@ e2e-tests:
 .PHONY: tests
 tests:
 	composer install --prefer-dist
+	php bin/console lint:twig
+	php bin/console lint:container
 	bin/phpunit
 
 analyze:
