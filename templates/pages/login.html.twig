@@ -1,0 +1,56 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <!-- breadcrumb start-->
+    <section class="breadcrumb breadcrumb_bg align-items-center">
+        <div class="container">
+            <div class="row align-items-center justify-content-between">
+                <div class="col-sm-6">
+                    <div class="breadcrumb_tittle text-left">
+                        <h2>Vous connecter</h2>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="breadcrumb_content text-right">
+                        <p>Accueil<span>/</span>Vous connecter</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- breadcrumb start-->
+
+    <section class="all_post section_padding">
+        <div class="container">
+            <div class="col-12">
+                <h2 class="contact-title">Connectez-vous </h2>
+                <h3></h3>
+            </div>
+            <div class="col-lg-12">
+                <form class="form-contact contact_form"  method="post" id="contactForm" action="{{ path('home') }}">
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label for="email"></label>
+                                <input class="form-control" name="email" id="email" type="email"
+                                       placeholder='Entrer votre email' required >
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="form-group">
+                                <label for="password"></label>
+                                <input class="form-control" name="password" id="password" type="password"
+                                       placeholder='Votre mot de passe' required >
+                            </div>
+                        </div>
+                        <div class="load_btn" style="margin-top: 0!important; padding-top: 17px">
+                            <input type="submit" name="formConnection" class="btn_1"/>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+
+{% endblock %}
