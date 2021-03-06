@@ -7,11 +7,17 @@
 
 // any CSS you import will output into a single css file (app.scss in this case)
 import './styles/app.scss';
-
+import './js/bootstrap.min';
 import './js/classie';
 import './js/contact';
 import './js/custom';
 import './js/mail-script';
+import './js/uisearch';
+import './js/jquery-1.12.1.min';
+import './js/jquery.ajaxchimp.min';
+import './js/jquery.form';
+import './js/jquery.nice-select.min';
+import './js/jquery.validate.min';
 import './js/popper.min';
 import './js/uisearch';
 
